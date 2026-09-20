@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/public/index.html" },
+    { "source": "/login/student", "destination": "/public/login-student.html" },
+    { "source": "/login/teacher", "destination": "/public/login-teacher.html" },
+    { "source": "/admin", "destination": "/public/login-admin.html" },
+    { "source": "/admin/dashboard", "destination": "/public/admin/dashboard.html" },
+    { "source": "/admin/subjects", "destination": "/public/admin/subjects.html" },
+    { "source": "/admin/teachers", "destination": "/public/admin/teachers.html" },
+    { "source": "/admin/content", "destination": "/public/admin/content.html" },
+    { "source": "/admin/quizzes", "destination": "/public/admin/quizzes.html" },
+    { "source": "/admin/fill-in-blanks", "destination": "/public/admin/fill-in-blanks.html" },
+    { "source": "/admin/grading", "destination": "/public/admin/grading.html" },
+    { "source": "/teacher/dashboard", "destination": "/public/teacher/dashboard.html" },
+    { "source": "/teacher/subjects", "destination": "/public/teacher/subjects.html" },
+    { "source": "/teacher/content", "destination": "/public/teacher/content.html" },
+    { "source": "/teacher/quizzes", "destination": "/public/teacher/quizzes.html" },
+    { "source": "/teacher/fill-in-blanks", "destination": "/public/teacher/fill-in-blanks.html" },
+    { "source": "/teacher/grading", "destination": "/public/teacher/grading.html" },
+    { "source": "/student/dashboard", "destination": "/public/student/dashboard.html" },
+    { "source": "/student/subjects", "destination": "/public/student/subjects.html" },
+    { "source": "/student/quizzes", "destination": "/public/student/quizzes.html" },
+    { "source": "/student/fill-in-blanks", "destination": "/public/student/fill-in-blanks.html" },
+    { "source": "/student/content", "destination": "/public/student/content.html" },
+    { "source": "/assets/(.*)", "destination": "/public/assets/$1" }
+  ]
+}

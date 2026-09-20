@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill in the Blanks | Learnify Admin</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <script src="/assets/js/auth.js"></script>
+    <script>checkAuth('admin');</script>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo-icon">L</div>
+                    <div>
+                        <span class="app-title" style="font-size: 1.25rem;">LEARNIFY</span>
+                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; margin-top: -2px;">Smart Learning System</div>
+                    </div>
+                </div>
+                <span class="user-badge" style="border-color: rgba(245,158,11,0.3); color: #f59e0b; margin-top: 12px;">Administrator</span>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li><a href="/admin/dashboard" class="sidebar-link">📊 Dashboard</a></li>
+                <li><a href="/admin/subjects" class="sidebar-link">📚 Subjects</a></li>
+                <li><a href="/admin/teachers" class="sidebar-link">👨‍🏫 Teachers & Assign</a></li>
+                <li><a href="/admin/content" class="sidebar-link">📄 Content Library</a></li>
+                <li><a href="/admin/quizzes" class="sidebar-link">📝 Quizzes</a></li>
+                <li><a href="/admin/fill-in-blanks" class="sidebar-link active">✏️ Fill in Blanks</a></li>
+                <li><a href="/admin/grading" class="sidebar-link">💯 Grading & Marks</a></li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link btn-danger" style="color: white; justify-content: center; gap: 8px;" id="logoutBtn">
+                    🚪 Log Out
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Window -->
+        <main class="main-content animate-fade">
+            <header class="content-header">
+                <div class="content-title">
+                    <h1>Fill in the Blanks Management</h1>
+                    <p>Create fill-in-the-blank exercises, add missing word questions, and assign to subjects.</p>
+                </div>
+            </header>
+
+            <!-- Table of Fill in the Blanks -->
+            <section class="glass-panel" style="padding: 2rem; margin-bottom: 2.5rem;">
+                <h2 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem;">Fill in the Blanks Directory</h2>
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 220px;">Exercise Title</th>
+                                <th style="width: 180px;">Assigned Subject</th>
+                                <th style="width: 150px;">Created By</th>
+                                <th>Sentences Count & Marks</th>
+                                <th style="width: 100px;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminFillBlanksBody">
+                            <!-- Injected dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Create Fill in the Blanks Form -->
+            <section class="glass-panel form-panel">
+                <h2 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem;">Create Fill in the Blanks Exercise</h2>
+                <form id="createFillBlanksForm">
+                    <div class="form-group">
+                        <label class="form-label" for="fbTitle">Exercise Title</label>
+                        <input type="text" id="fbTitle" class="form-input" placeholder="e.g. Database Transactions Fill in the Blanks" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="fbSubjectSelect">Assign Exercise to Subject</label>
+                        <select id="fbSubjectSelect" class="form-input" required></select>
+                    </div>
+
+                    <div style="padding: 1rem; border: 1px dashed var(--border-color); border-radius: 10px; margin-bottom: 1.5rem;">
+                        <h4 style="margin-bottom: 1rem; color: var(--color-secondary);">Sentence Question 1</h4>
+                        <div class="form-group">
+                            <label class="form-label" for="fb1Text">Sentence Text (Use _______ for missing word)</label>
+                            <input type="text" id="fb1Text" class="form-input" placeholder="ACID stands for Atomicity, Consistency, Isolation, _______." required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="fb1Ans">Expected Correct Missing Word</label>
+                            <input type="text" id="fb1Ans" class="form-input" placeholder="Durability" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-glow btn-secondary" style="padding: 12px 30px;">
+                        Create Exercise & Assign to Subject &rarr;
+                    </button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <div class="toast-container"></div>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

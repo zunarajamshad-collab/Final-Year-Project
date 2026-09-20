@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Library | Learnify Student</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <script src="/assets/js/auth.js"></script>
+    <script>checkAuth('student');</script>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" style="border-color: rgba(99,102,241,0.15);">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo-icon" style="background: var(--color-primary-gradient); box-shadow: var(--shadow-neon);">L</div>
+                    <div>
+                        <span class="app-title" style="font-size: 1.25rem;">LEARNIFY</span>
+                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; margin-top: -2px;">Smart Learning System</div>
+                    </div>
+                </div>
+                <span class="user-badge" style="border-color: rgba(99,102,241,0.3); color: #8b5cf6; margin-top: 12px;">Student</span>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li><a href="/student/dashboard" class="sidebar-link">📊 Dashboard</a></li>
+                <li><a href="/student/subjects" class="sidebar-link">📚 View Subjects</a></li>
+                <li><a href="/student/quizzes" class="sidebar-link">📝 Interactive Quizzes</a></li>
+                <li><a href="/student/fill-in-blanks" class="sidebar-link">✏️ Fill in Blanks</a></li>
+                <li><a href="/student/content" class="sidebar-link active">📄 Content Library</a></li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link btn-danger" style="color: white; justify-content: center; gap: 8px;" id="logoutBtn">
+                    🚪 Log Out
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Window -->
+        <main class="main-content animate-fade">
+            <header class="content-header">
+                <div class="content-title">
+                    <h1>Content Library</h1>
+                    <p>Browse course lecture slides, reading materials, and download study guides.</p>
+                </div>
+            </header>
+
+            <!-- Table of Content -->
+            <section class="glass-panel" style="padding: 2rem;">
+                <h2 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem;">Available Course Materials</h2>
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 220px;">Material Title</th>
+                                <th style="width: 180px;">Subject</th>
+                                <th style="width: 150px;">Uploaded By</th>
+                                <th>Description</th>
+                                <th style="width: 80px;">Type</th>
+                                <th style="width: 140px;">Download</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentContentBody">
+                            <!-- Injected dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="toast-container"></div>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

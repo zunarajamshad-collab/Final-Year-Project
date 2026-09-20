@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Management | Learnify Admin</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <script src="/assets/js/auth.js"></script>
+    <script>checkAuth('admin');</script>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo-icon">L</div>
+                    <div>
+                        <span class="app-title" style="font-size: 1.25rem;">LEARNIFY</span>
+                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; margin-top: -2px;">Smart Learning System</div>
+                    </div>
+                </div>
+                <span class="user-badge" style="border-color: rgba(245,158,11,0.3); color: #f59e0b; margin-top: 12px;">Administrator</span>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li><a href="/admin/dashboard" class="sidebar-link">📊 Dashboard</a></li>
+                <li><a href="/admin/subjects" class="sidebar-link">📚 Subjects</a></li>
+                <li><a href="/admin/teachers" class="sidebar-link active">👨‍🏫 Teachers & Assign</a></li>
+                <li><a href="/admin/content" class="sidebar-link">📄 Content Library</a></li>
+                <li><a href="/admin/quizzes" class="sidebar-link">📝 Quizzes</a></li>
+                <li><a href="/admin/fill-in-blanks" class="sidebar-link">✏️ Fill in Blanks</a></li>
+                <li><a href="/admin/grading" class="sidebar-link">💯 Grading & Marks</a></li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link btn-danger" style="color: white; justify-content: center; gap: 8px;" id="logoutBtn">
+                    🚪 Log Out
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Window -->
+        <main class="main-content animate-fade">
+            <header class="content-header">
+                <div class="content-title">
+                    <h1>Teacher Management & Subject Assignment</h1>
+                    <p>Register educator profiles, view assigned subjects, and manage teaching allocation.</p>
+                </div>
+            </header>
+
+            <!-- Table of Teachers -->
+            <section class="glass-panel" style="padding: 2rem; margin-bottom: 2.5rem;">
+                <h2 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem;">Educator Directory & Assigned Subjects</h2>
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 180px;">Teacher Name</th>
+                                <th style="width: 120px;">Username</th>
+                                <th>Email</th>
+                                <th style="width: 250px;">Assigned Subject(s)</th>
+                                <th style="width: 100px;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminTeachersBody">
+                            <!-- Injected dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Assign Teacher to Subject Form -->
+            <section class="glass-panel form-panel" style="margin-bottom: 2.5rem; border-color: rgba(99,102,241,0.25);">
+                <h2 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem;">Assign Teacher to Subject</h2>
+                <form id="assignTeacherForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="assignTeacherSelect">Select Teacher</label>
+                            <select id="assignTeacherSelect" class="form-input" required></select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="assignSubjectSelect">Select Target Subject</label>
+                            <select id="assignSubjectSelect" class="form-input" required></select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-glow" style="padding: 12px 30px;">
+                        Assign Teacher to Subject &rarr;
+                    </button>
+                </form>
+            </section>
+
+            <!-- Add Teacher Form -->
+            <section class="glass-panel form-panel">
+                <h2 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem;">Add New Teacher Account</h2>
+                <form id="addTeacherForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="tName">Full Name</label>
+                            <input type="text" id="tName" class="form-input" placeholder="e.g. Dr. Alan Turing" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="tUsername">Username</label>
+                            <input type="text" id="tUsername" class="form-input" placeholder="e.g. alan_turing" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="tEmail">Email Address</label>
+                        <input type="email" id="tEmail" class="form-input" placeholder="e.g. alan@learnify.com" required>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <label class="form-label" for="tPassword">Account Password</label>
+                        <input type="password" id="tPassword" class="form-input" placeholder="Min 6 characters" required minlength="6">
+                    </div>
+
+                    <button type="submit" class="btn-glow btn-secondary" style="padding: 12px 30px;">
+                        Register Teacher &rarr;
+                    </button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <div class="toast-container"></div>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

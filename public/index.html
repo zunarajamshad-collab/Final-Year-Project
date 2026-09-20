@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learnify: Smart Learning System</title>
+    <meta name="description" content="Welcome to Learnify: The next-generation interactive Smart Learning Portal. Log in to access customized Subject, Content, Quiz, Fill in the Blanks, and Grading modules.">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <!-- Premium Navigation Bar -->
+    <nav class="navbar animate-fade">
+        <a href="/" class="nav-logo">
+            <div class="logo-icon">L</div>
+            <span style="font-weight: 800; font-size: 1.4rem; letter-spacing: 1px;">LEARNIFY</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#features" class="nav-link">Modules</a></li>
+            <li><a href="#stats" class="nav-link">Analytics</a></li>
+            <li><a href="#portals" class="nav-link">Select Portal</a></li>
+        </ul>
+        <div>
+            <a href="#portals" class="btn-glow" style="padding: 10px 20px; font-size: 0.9rem; box-shadow: none;">Access Portal</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section animate-fade">
+        <div class="hero-text-side">
+            <span class="hero-badge">⚡ Next-Gen E-Learning </span>
+            <h1 class="hero-title">Learnify: Smart Learning System</h1>
+            <p class="hero-description">
+                An integrated, professional academic management system. Learnify features Subject Management, Content Uploads, Interactive Quizzes, Fill in the Blanks exercises, and automated Grading engines.
+            </p>
+            <div class="hero-actions">
+                <a href="#portals" class="btn-glow">Access Portal Gateways</a>
+                <a href="#features" class="btn-outline">View Core Modules</a>
+            </div>
+        </div>
+        <div class="hero-visual-side">
+            <div class="visual-glow"></div>
+            <div class="hero-mockup-container">
+                <img src="/assets/images/dashboard_preview.jpg" alt="Learnify Dashboard Mockup Preview" class="hero-mockup-image">
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Strip Section -->
+    <section id="stats" class="glass-panel stats-strip animate-fade" style="margin-top: 2rem;">
+        <div class="stats-item">
+            <h3>4 Modules</h3>
+            <p>Subjects & Content</p>
+        </div>
+        <div class="stats-item" style="border-left: 1px solid var(--border-color); border-right: 1px solid var(--border-color);">
+            <h3>2 Evaluations</h3>
+            <p>Quiz & Fill in Blanks</p>
+        </div>
+        <div class="stats-item">
+            <h3>3 Portals</h3>
+            <p>Admin, Teacher, Student</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section animate-fade">
+        <div class="section-header">
+            <h2>Academic Modules & Core Capabilities</h2>
+            <p style="color: var(--text-muted);">Engineered according to updated course specifications for Subjects, Quizzes, Fill-in-blanks, and Grading.</p>
+        </div>
+        <div class="features-grid">
+            <div class="glass-panel feature-card">
+                <div class="icon-box">📚</div>
+                <div>
+                    <h3>Subject Management</h3>
+                    <p>Add, View, Update, and Delete course Subjects. Assign educators to specific Subjects for targeted class delivery.</p>
+                </div>
+            </div>
+            <div class="glass-panel feature-card">
+                <div class="icon-box">📄</div>
+                <div>
+                    <h3>Content Library</h3>
+                    <p>Upload, update, view, and download course content materials (PDFs, PPT slides, Reading worksheets).</p>
+                </div>
+            </div>
+            <div class="glass-panel feature-card">
+                <div class="icon-box">📝</div>
+                <div>
+                    <h3>Interactive Quizzes</h3>
+                    <p>Create multiple-choice quizzes, add questions, assign to Subjects, take tests interactively, and log score histories.</p>
+                </div>
+            </div>
+            <div class="glass-panel feature-card">
+                <div class="icon-box">✏️</div>
+                <div>
+                    <h3>Fill in the Blanks</h3>
+                    <p>Build sentence-completion exercises, type missing words interactively, submit attempts, and auto-evaluate marks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portals Section -->
+    <section id="portals" class="portals-section animate-fade">
+        <div class="section-header">
+            <h2>Portal Access Center</h2>
+            <p style="color: var(--text-muted);">Select your organizational role below to authenticate and enter your workspace dashboard.</p>
+        </div>
+        <div class="portal-grid">
+            <!-- Student Portal Card -->
+            <div class="glass-panel portal-card" id="studentPortalCard" onclick="window.location.href='/login/student'">
+                <div class="icon-wrapper">🎓</div>
+                <h3>Student Portal</h3>
+                <p>View Subjects, start Quizzes, submit Fill in the Blanks answers, check Quiz marks, and download Content materials.</p>
+                <a href="/login/student" class="btn-glow" id="studentPortalBtn">Student Access &rarr;</a>
+            </div>
+
+            <!-- Teacher Portal Card -->
+            <div class="glass-panel portal-card" id="teacherPortalCard" onclick="window.location.href='/login/teacher'" style="border-color: rgba(236, 72, 153, 0.25);">
+                <div class="icon-wrapper">🍎</div>
+                <h3>Teacher Portal</h3>
+                <p>View assigned Subjects, upload Content materials, create Quizzes & Fill in the Blanks, check student attempts, and generate results.</p>
+                <a href="/login/teacher" class="btn-glow btn-secondary" id="teacherPortalBtn">Teacher Access &rarr;</a>
+            </div>
+
+            <!-- Admin Portal Card -->
+            <div class="glass-panel portal-card" id="adminPortalCard" onclick="window.location.href='/admin'" style="border-color: rgba(245, 158, 11, 0.25);">
+                <div class="icon-wrapper">⚙️</div>
+                <h3>Admin Panel</h3>
+                <p>Manage Subjects, assign Teachers to Subjects, control Content, build Quizzes & Fill in the Blanks, and audit Student Results & Marks.</p>
+                <a href="/admin" class="btn-glow" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); box-shadow: 0 0 20px rgba(245, 158, 11, 0.25);" id="adminPortalBtn">Admin Access &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industrial Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-container">
+                    <div class="logo-icon">L</div>
+                    <span style="font-weight: 800; font-size: 1.4rem; letter-spacing: 1px;">LEARNIFY</span>
+                </div>
+                <p>Next-generation digital learning system for Subjects management, Content sharing, Quiz evaluations, Fill in the Blanks, and Grading.</p>
+            </div>
+            <div class="footer-links-col">
+                <h4>System Roles</h4>
+                <ul>
+                    <li><a href="/login/student">Student Console</a></li>
+                    <li><a href="/login/teacher">Teacher Console</a></li>
+                    <li><a href="/admin">Admin Terminal</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-col">
+                <h4>Modules</h4>
+                <ul>
+                    <li><a href="#features">Subject Management</a></li>
+                    <li><a href="#features">Content Library</a></li>
+                    <li><a href="#features">Interactive Quizzes</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-col">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="https://nodejs.org" target="_blank">Node.js Engine</a></li>
+                    <li><a href="https://expressjs.com" target="_blank">Express Framework</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Learnify Smart Learning System. Designed for Enterprise Learning Platforms.</p>
+            <p>Status: Operational</p>
+        </div>
+    </footer>
+
+    <!-- Background Toast container -->
+    <div class="toast-container"></div>
+    <script src="/assets/js/auth.js"></script>
+</body>
+</html>

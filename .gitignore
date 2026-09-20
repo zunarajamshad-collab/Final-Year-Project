@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+.npm
+
+# Local environment & cache
+.env
+.env.local
+.DS_Store
+Thumbs.db
+*.log
+
+# Vercel
+.vercel

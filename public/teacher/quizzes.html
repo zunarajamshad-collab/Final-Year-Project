@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzes | Learnify Teacher</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <script src="/assets/js/auth.js"></script>
+    <script>checkAuth('teacher');</script>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" style="border-color: rgba(236,72,153,0.15);">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo-icon" style="background: var(--color-secondary-gradient); box-shadow: var(--shadow-neon-pink);">L</div>
+                    <div>
+                        <span class="app-title" style="font-size: 1.25rem;">LEARNIFY</span>
+                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; margin-top: -2px;">Smart Learning System</div>
+                    </div>
+                </div>
+                <span class="user-badge" style="border-color: rgba(236,72,153,0.3); color: #ec4899; margin-top: 12px;">Educator</span>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li><a href="/teacher/dashboard" class="sidebar-link">📊 Dashboard</a></li>
+                <li><a href="/teacher/subjects" class="sidebar-link">📚 Assigned Subjects</a></li>
+                <li><a href="/teacher/content" class="sidebar-link">📄 Content Library</a></li>
+                <li><a href="/teacher/quizzes" class="sidebar-link active" style="box-shadow: var(--shadow-neon-pink); background: var(--color-secondary-gradient);">📝 Quizzes</a></li>
+                <li><a href="/teacher/fill-in-blanks" class="sidebar-link">✏️ Fill in Blanks</a></li>
+                <li><a href="/teacher/grading" class="sidebar-link">💯 Grading & Results</a></li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link btn-danger" style="color: white; justify-content: center; gap: 8px;" id="logoutBtn">
+                    🚪 Log Out
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Window -->
+        <main class="main-content animate-fade">
+            <header class="content-header">
+                <div class="content-title">
+                    <h1>Quiz Management</h1>
+                    <p>Build multiple-choice quizzes, add question sets, and assign to your subjects.</p>
+                </div>
+            </header>
+
+            <!-- Table of Quizzes -->
+            <section class="glass-panel" style="padding: 2rem; margin-bottom: 2.5rem; border-color: rgba(236,72,153,0.15);">
+                <h2 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem;">Created Quizzes</h2>
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 220px;">Quiz Title</th>
+                                <th style="width: 180px;">Subject</th>
+                                <th style="width: 150px;">Created By</th>
+                                <th>Questions & Marks</th>
+                                <th style="width: 100px;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="teacherQuizzesBody">
+                            <!-- Injected dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Create Quiz Form -->
+            <section class="glass-panel form-panel" style="border-color: rgba(236,72,153,0.2);">
+                <h2 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem;">Create New Quiz</h2>
+                <form id="createQuizForm">
+                    <div class="form-group">
+                        <label class="form-label" for="quizTitle">Quiz Title</label>
+                        <input type="text" id="quizTitle" class="form-input" placeholder="e.g. Relational Calculus Quiz 1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="quizSubjectSelect">Assign Quiz to Subject</label>
+                        <select id="quizSubjectSelect" class="form-input" required></select>
+                    </div>
+
+                    <div style="padding: 1rem; border: 1px dashed var(--border-color); border-radius: 10px; margin-bottom: 1.5rem;">
+                        <h4 style="margin-bottom: 1rem; color: var(--color-secondary);">Question 1 Details</h4>
+                        <div class="form-group">
+                            <label class="form-label" for="q1Text">Question Statement</label>
+                            <input type="text" id="q1Text" class="form-input" placeholder="e.g. What is the SQL keyword for sorting query results?" required>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label" for="q1OptA">Option A</label>
+                                <input type="text" id="q1OptA" class="form-input" placeholder="ORDER BY" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="q1OptB">Option B</label>
+                                <input type="text" id="q1OptB" class="form-input" placeholder="GROUP BY" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="q1Correct">Correct Option Index</label>
+                            <select id="q1Correct" class="form-input" required>
+                                <option value="0">Option A (Index 0)</option>
+                                <option value="1">Option B (Index 1)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-glow btn-secondary" style="padding: 12px 30px;">
+                        Create Quiz &rarr;
+                    </button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <div class="toast-container"></div>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

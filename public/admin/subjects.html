@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Management | Learnify Admin</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <script src="/assets/js/auth.js"></script>
+    <script>checkAuth('admin');</script>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo-icon">L</div>
+                    <div>
+                        <span class="app-title" style="font-size: 1.25rem;">LEARNIFY</span>
+                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; margin-top: -2px;">Smart Learning System</div>
+                    </div>
+                </div>
+                <span class="user-badge" style="border-color: rgba(245,158,11,0.3); color: #f59e0b; margin-top: 12px;">Administrator</span>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li><a href="/admin/dashboard" class="sidebar-link">📊 Dashboard</a></li>
+                <li><a href="/admin/subjects" class="sidebar-link active">📚 Subjects</a></li>
+                <li><a href="/admin/teachers" class="sidebar-link">👨‍🏫 Teachers & Assign</a></li>
+                <li><a href="/admin/content" class="sidebar-link">📄 Content Library</a></li>
+                <li><a href="/admin/quizzes" class="sidebar-link">📝 Quizzes</a></li>
+                <li><a href="/admin/fill-in-blanks" class="sidebar-link">✏️ Fill in Blanks</a></li>
+                <li><a href="/admin/grading" class="sidebar-link">💯 Grading & Marks</a></li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link btn-danger" style="color: white; justify-content: center; gap: 8px;" id="logoutBtn">
+                    🚪 Log Out
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Window -->
+        <main class="main-content animate-fade">
+            <header class="content-header">
+                <div class="content-title">
+                    <h1>Subject Management</h1>
+                    <p>Add new course subjects, view curriculum lists, and update subject parameters.</p>
+                </div>
+            </header>
+
+            <!-- Table of Subjects -->
+            <section class="glass-panel" style="padding: 2rem; margin-bottom: 2.5rem;">
+                <h2 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem;">View Subjects Directory</h2>
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 100px;">Code</th>
+                                <th style="width: 220px;">Subject Name</th>
+                                <th>Description</th>
+                                <th style="width: 180px;">Assigned Teacher(s)</th>
+                                <th style="width: 100px;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminSubjectsBody">
+                            <!-- Injected dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Add Subject Form -->
+            <section class="glass-panel form-panel">
+                <h2 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem;">Add New Subject</h2>
+                <form id="addSubjectForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="subCode">Subject Code</label>
+                            <input type="text" id="subCode" class="form-input" placeholder="e.g. CS501" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="subCredits">Credit Hours</label>
+                            <input type="number" id="subCredits" class="form-input" placeholder="e.g. 3" required min="1" max="6">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="subName">Subject Title Name</label>
+                        <input type="text" id="subName" class="form-input" placeholder="e.g. Cloud Computing & Distributed Systems" required>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <label class="form-label" for="subDesc">Subject Description</label>
+                        <textarea id="subDesc" class="form-input" rows="3" placeholder="Brief course outline and curriculum objectives..." required style="resize: none; font-family: inherit;"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-glow" style="padding: 12px 30px;" id="addSubjectSubmitBtn">
+                        Create Subject &rarr;
+                    </button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <div class="toast-container"></div>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

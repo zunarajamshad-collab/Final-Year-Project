@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | Learnify</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <script src="/assets/js/auth.js"></script>
+    <script>checkAuth('student');</script>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" style="border-color: rgba(99,102,241,0.15);">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo-icon" style="background: var(--color-primary-gradient); box-shadow: var(--shadow-neon);">L</div>
+                    <div>
+                        <span class="app-title" style="font-size: 1.25rem;">LEARNIFY</span>
+                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; margin-top: -2px;">Smart Learning System</div>
+                    </div>
+                </div>
+                <span class="user-badge" style="border-color: rgba(99,102,241,0.3); color: #8b5cf6; margin-top: 12px;">Student</span>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li><a href="/student/dashboard" class="sidebar-link active">📊 Dashboard</a></li>
+                <li><a href="/student/subjects" class="sidebar-link">📚 View Subjects</a></li>
+                <li><a href="/student/quizzes" class="sidebar-link">📝 Interactive Quizzes</a></li>
+                <li><a href="/student/fill-in-blanks" class="sidebar-link">✏️ Fill in Blanks</a></li>
+                <li><a href="/student/content" class="sidebar-link">📄 Content Library</a></li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link btn-danger" style="color: white; justify-content: center; gap: 8px;" id="logoutBtn">
+                    🚪 Log Out
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Window -->
+        <main class="main-content animate-fade">
+            <header class="content-header">
+                <div class="content-title">
+                    <h1>Student Learning Workspace</h1>
+                    <p>Welcome back, <span class="user-name-display" style="color: #a5b4fc; font-weight: 600;">Student</span></p>
+                </div>
+            </header>
+
+            <!-- Stats grid -->
+            <section class="stats-grid">
+                <div class="glass-panel stat-card">
+                    <div class="card-label">Enrolled Subjects</div>
+                    <div class="card-value" id="studentEnrolledSubs">0</div>
+                    <div class="card-trend up">Curriculum Courses</div>
+                </div>
+                <div class="glass-panel stat-card" style="border-color: rgba(99, 102, 241, 0.25);">
+                    <div class="card-label">Available Quizzes</div>
+                    <div class="card-value" id="studentAvailableQuizzes">0</div>
+                    <div class="card-trend up">Evaluations</div>
+                </div>
+                <div class="glass-panel stat-card" style="border-color: rgba(236, 72, 153, 0.25);">
+                    <div class="card-label">Fill in Blanks</div>
+                    <div class="card-value" id="studentAvailableFillBlanks">0</div>
+                    <div class="card-trend up">Exercises</div>
+                </div>
+                <div class="glass-panel stat-card" style="border-color: rgba(16, 185, 129, 0.25);">
+                    <div class="card-label">Avg Evaluation Marks</div>
+                    <div class="card-value" id="studentAvgMarks">0%</div>
+                    <div class="card-trend up">Academic Performance</div>
+                </div>
+            </section>
+
+            <!-- Quick Action Links -->
+            <section class="glass-panel" style="padding: 2.5rem;">
+                <h2 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem;">Academic Portal Shortcuts</h2>
+                <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem;">
+                    Access your course subjects, start multiple-choice quizzes, answer fill-in-the-blank questions, and download lecture materials directly.
+                </p>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="/student/quizzes" class="btn-glow">Start Interactive Quiz &rarr;</a>
+                    <a href="/student/fill-in-blanks" class="btn-glow btn-secondary">Start Fill in Blanks &rarr;</a>
+                    <a href="/student/content" class="btn-outline">Browse Content Materials &rarr;</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="toast-container"></div>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

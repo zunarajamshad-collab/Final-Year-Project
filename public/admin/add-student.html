@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student | Learnify Admin</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <script src="/assets/js/auth.js"></script>
+    <script>
+        checkAuth('admin');
+    </script>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo-icon">L</div>
+                    <div>
+                        <span class="app-title" style="font-size: 1.25rem;">LEARNIFY</span>
+                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; margin-top: -2px;">Smart Learning System</div>
+                    </div>
+                </div>
+                <span class="user-badge" style="border-color: rgba(245,158,11,0.3); color: #f59e0b; margin-top: 12px;">Administrator</span>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li><a href="/admin/dashboard" class="sidebar-link">📊 Dashboard</a></li>
+                <li><a href="/admin/manage-users" class="sidebar-link">👥 User Management</a></li>
+                <li><a href="/admin/add-student" class="sidebar-link active">➕ Add Student</a></li>
+                <li><a href="/admin/add-teacher" class="sidebar-link">➕ Add Teacher</a></li>
+                <li><a href="/admin/quiz-history" class="sidebar-link">📝 Quiz History</a></li>
+                <li><a href="/admin/project-management" class="sidebar-link">📂 Projects Control</a></li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link btn-danger" style="color: white; justify-content: center; gap: 8px;" id="logoutBtn">
+                    🚪 Log Out
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Window -->
+        <main class="main-content animate-fade">
+            <header class="content-header">
+                <div class="content-title">
+                    <h1>Add Student Account</h1>
+                    <p>Register a new student to the Learnify platform.</p>
+                </div>
+            </header>
+
+            <!-- Registration Form panel -->
+            <section class="glass-panel form-panel">
+                <form id="addStudentForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="studentName">Full Name</label>
+                            <input type="text" id="studentName" class="form-input" placeholder="e.g. Alex Rivera" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="studentUsername">Username</label>
+                            <input type="text" id="studentUsername" class="form-input" placeholder="e.g. alex" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="studentEmail">Email Address</label>
+                        <input type="email" id="studentEmail" class="form-input" placeholder="e.g. alex@learnify.com" required>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <label class="form-label" for="studentPassword">Account Password</label>
+                        <input type="password" id="studentPassword" class="form-input" placeholder="Min 6 characters" required minlength="6">
+                    </div>
+
+                    <button type="submit" class="btn-glow" style="padding: 12px 30px;" id="addStudentSubmitBtn">
+                        Create Student Profile
+                    </button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- Background Toast container -->
+    <div class="toast-container"></div>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

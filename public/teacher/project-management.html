@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Grading | Learnify Teacher</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <script src="/assets/js/auth.js"></script>
+    <script>
+        checkAuth('teacher');
+    </script>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" style="border-color: rgba(236,72,153,0.15);">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo-icon" style="background: var(--color-secondary-gradient); box-shadow: var(--shadow-neon-pink);">L</div>
+                    <div>
+                        <span class="app-title" style="font-size: 1.25rem;">LEARNIFY</span>
+                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; margin-top: -2px;">Smart Learning System</div>
+                    </div>
+                </div>
+                <span class="user-badge" style="border-color: rgba(236,72,153,0.3); color: #ec4899; margin-top: 12px;">Educator</span>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li><a href="/teacher/dashboard" class="sidebar-link">📊 Dashboard</a></li>
+                <li><a href="/teacher/project-management" class="sidebar-link active" style="box-shadow: var(--shadow-neon-pink); background: var(--color-secondary-gradient);">📂 Project Grading</a></li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link btn-danger" style="color: white; justify-content: center; gap: 8px;" id="logoutBtn">
+                    🚪 Log Out
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Window -->
+        <main class="main-content animate-fade">
+            <header class="content-header">
+                <div class="content-title">
+                    <h1>Project Assessment & Grading</h1>
+                    <p>Review active projects, assign letter grades, and submit feedback ratings.</p>
+                </div>
+            </header>
+
+            <!-- Projects table -->
+            <section class="glass-panel" style="padding: 2rem; border-color: rgba(236,72,153,0.15);">
+                <h2 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem;">Submitted Project Submissions</h2>
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 200px;">Project Title</th>
+                                <th style="width: 150px;">Student Name</th>
+                                <th>Description Summary</th>
+                                <th style="width: 120px;">Review State</th>
+                                <th style="width: 80px;">Grade</th>
+                                <th style="width: 220px;">Grading Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="teacherProjectBody">
+                            <!-- Injected dynamically by main.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Background Toast container -->
+    <div class="toast-container"></div>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

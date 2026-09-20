@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Control | Learnify Admin</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <script src="/assets/js/auth.js"></script>
+    <script>
+        checkAuth('admin');
+    </script>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo-icon">L</div>
+                    <div>
+                        <span class="app-title" style="font-size: 1.25rem;">LEARNIFY</span>
+                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; margin-top: -2px;">Smart Learning System</div>
+                    </div>
+                </div>
+                <span class="user-badge" style="border-color: rgba(245,158,11,0.3); color: #f59e0b; margin-top: 12px;">Administrator</span>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li><a href="/admin/dashboard" class="sidebar-link">📊 Dashboard</a></li>
+                <li><a href="/admin/manage-users" class="sidebar-link">👥 User Management</a></li>
+                <li><a href="/admin/add-student" class="sidebar-link">➕ Add Student</a></li>
+                <li><a href="/admin/add-teacher" class="sidebar-link">➕ Add Teacher</a></li>
+                <li><a href="/admin/quiz-history" class="sidebar-link">📝 Quiz History</a></li>
+                <li><a href="/admin/project-management" class="sidebar-link active">📂 Projects Control</a></li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link btn-danger" style="color: white; justify-content: center; gap: 8px;" id="logoutBtn">
+                    🚪 Log Out
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Window -->
+        <main class="main-content animate-fade">
+            <header class="content-header">
+                <div class="content-title">
+                    <h1>Administrative Projects Control</h1>
+                    <p>Oversee all active student projects, adjust review statuses, and review submissions.</p>
+                </div>
+            </header>
+
+            <!-- Projects Table Panel -->
+            <section class="glass-panel" style="padding: 2rem;">
+                <h2 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem;">All Submitted Projects</h2>
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 200px;">Project Title</th>
+                                <th style="width: 150px;">Student</th>
+                                <th>Description Summary</th>
+                                <th style="width: 120px;">Review State</th>
+                                <th style="width: 80px;">Grade</th>
+                                <th style="width: 140px;">Control Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminProjectBody">
+                            <!-- Injected dynamically by main.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Background Toast container -->
+    <div class="toast-container"></div>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

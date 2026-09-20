@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quizzes | Learnify Student</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <script src="/assets/js/auth.js"></script>
+    <script>checkAuth('student');</script>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" style="border-color: rgba(99,102,241,0.15);">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo-icon" style="background: var(--color-primary-gradient); box-shadow: var(--shadow-neon);">L</div>
+                    <div>
+                        <span class="app-title" style="font-size: 1.25rem;">LEARNIFY</span>
+                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; margin-top: -2px;">Smart Learning System</div>
+                    </div>
+                </div>
+                <span class="user-badge" style="border-color: rgba(99,102,241,0.3); color: #8b5cf6; margin-top: 12px;">Student</span>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li><a href="/student/dashboard" class="sidebar-link">📊 Dashboard</a></li>
+                <li><a href="/student/subjects" class="sidebar-link">📚 View Subjects</a></li>
+                <li><a href="/student/quizzes" class="sidebar-link active">📝 Interactive Quizzes</a></li>
+                <li><a href="/student/fill-in-blanks" class="sidebar-link">✏️ Fill in Blanks</a></li>
+                <li><a href="/student/content" class="sidebar-link">📄 Content Library</a></li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link btn-danger" style="color: white; justify-content: center; gap: 8px;" id="logoutBtn">
+                    🚪 Log Out
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Window -->
+        <main class="main-content animate-fade">
+            <header class="content-header">
+                <div class="content-title">
+                    <h1>Interactive Quizzes</h1>
+                    <p>Start course quizzes, select answers, submit evaluation attempts, and view your marks.</p>
+                </div>
+            </header>
+
+            <!-- Quiz Interactive Player Container -->
+            <section id="studentQuizPlayerContainer">
+                <!-- Injected dynamically by main.js -->
+            </section>
+        </main>
+    </div>
+
+    <div class="toast-container"></div>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

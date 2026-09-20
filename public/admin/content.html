@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Library | Learnify Admin</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <script src="/assets/js/auth.js"></script>
+    <script>checkAuth('admin');</script>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo-icon">L</div>
+                    <div>
+                        <span class="app-title" style="font-size: 1.25rem;">LEARNIFY</span>
+                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; margin-top: -2px;">Smart Learning System</div>
+                    </div>
+                </div>
+                <span class="user-badge" style="border-color: rgba(245,158,11,0.3); color: #f59e0b; margin-top: 12px;">Administrator</span>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li><a href="/admin/dashboard" class="sidebar-link">📊 Dashboard</a></li>
+                <li><a href="/admin/subjects" class="sidebar-link">📚 Subjects</a></li>
+                <li><a href="/admin/teachers" class="sidebar-link">👨‍🏫 Teachers & Assign</a></li>
+                <li><a href="/admin/content" class="sidebar-link active">📄 Content Library</a></li>
+                <li><a href="/admin/quizzes" class="sidebar-link">📝 Quizzes</a></li>
+                <li><a href="/admin/fill-in-blanks" class="sidebar-link">✏️ Fill in Blanks</a></li>
+                <li><a href="/admin/grading" class="sidebar-link">💯 Grading & Marks</a></li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link btn-danger" style="color: white; justify-content: center; gap: 8px;" id="logoutBtn">
+                    🚪 Log Out
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Window -->
+        <main class="main-content animate-fade">
+            <header class="content-header">
+                <div class="content-title">
+                    <h1>Content Library Management</h1>
+                    <p>Upload course lecture notes, slides, worksheets, and study materials.</p>
+                </div>
+            </header>
+
+            <!-- Table of Content Files -->
+            <section class="glass-panel" style="padding: 2rem; margin-bottom: 2.5rem;">
+                <h2 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem;">Uploaded Content Materials</h2>
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 200px;">Material Title</th>
+                                <th style="width: 180px;">Subject</th>
+                                <th style="width: 150px;">Uploaded By</th>
+                                <th>Description</th>
+                                <th style="width: 80px;">Type</th>
+                                <th style="width: 180px;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminContentBody">
+                            <!-- Injected dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Upload Content Form -->
+            <section class="glass-panel form-panel">
+                <h2 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem;">Upload New Content Material</h2>
+                <form id="uploadContentForm">
+                    <div class="form-group">
+                        <label class="form-label" for="contentTitle">Content Material Title</label>
+                        <input type="text" id="contentTitle" class="form-input" placeholder="e.g. Distributed Databases Overview Chapter 3" required>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="contentSubjectSelect">Target Subject</label>
+                            <select id="contentSubjectSelect" class="form-input" required></select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contentTypeSelect">File Type Format</label>
+                            <select id="contentTypeSelect" class="form-input" required>
+                                <option value="pdf">PDF Document</option>
+                                <option value="pptx">PowerPoint Presentation (PPTX)</option>
+                                <option value="docx">Word Document (DOCX)</option>
+                                <option value="mp4">Video Tutorial (MP4)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Attach File Resource</label>
+                        <div class="file-upload-wrapper">
+                            <div class="file-upload-icon">📁</div>
+                            <div class="file-upload-text" id="fileUploadNameText">Drag & Drop or Click to Select File</div>
+                            <div class="file-upload-subtext">Supports PDF, PPTX, DOCX, MP4 (Max size: 50MB)</div>
+                            <input type="file" id="contentFileInput" required>
+                        </div>
+                        <div class="upload-progress-container" id="uploadProgressBox">
+                            <div class="file-upload-text" id="uploadProgressPercentText" style="font-size: 0.85rem; display: flex; justify-content: space-between; margin-bottom: 4px;">
+                                <span id="uploadStatusMessage">Uploading content resource...</span>
+                                <span id="uploadPercentVal">0%</span>
+                            </div>
+                            <div class="upload-progress-bar">
+                                <div class="upload-progress-fill" id="uploadProgressFillBar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <label class="form-label" for="contentDesc">Content Summary Description</label>
+                        <textarea id="contentDesc" class="form-input" rows="3" placeholder="Brief outline of study objectives covered in this document..." required style="resize: none; font-family: inherit;"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-glow" style="padding: 12px 30px;">
+                        Upload Content &rarr;
+                    </button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <div class="toast-container"></div>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

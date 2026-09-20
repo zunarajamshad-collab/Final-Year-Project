@@ -1,0 +1,13 @@
+{
+  "name": "learnify-smart-learning-system",
+  "version": "1.0.0",
+  "description": "Smart learning system project with admin, teacher and student views.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

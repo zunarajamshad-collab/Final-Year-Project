@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Learnify</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <script src="/assets/js/auth.js"></script>
+    <script>checkAuth('admin');</script>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo-icon">L</div>
+                    <div>
+                        <span class="app-title" style="font-size: 1.25rem;">LEARNIFY</span>
+                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; margin-top: -2px;">Smart Learning System</div>
+                    </div>
+                </div>
+                <span class="user-badge" style="border-color: rgba(245,158,11,0.3); color: #f59e0b; margin-top: 12px;">Administrator</span>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li><a href="/admin/dashboard" class="sidebar-link active">📊 Dashboard</a></li>
+                <li><a href="/admin/subjects" class="sidebar-link">📚 Subjects</a></li>
+                <li><a href="/admin/teachers" class="sidebar-link">👨‍🏫 Teachers & Assign</a></li>
+                <li><a href="/admin/content" class="sidebar-link">📄 Content Library</a></li>
+                <li><a href="/admin/quizzes" class="sidebar-link">📝 Quizzes</a></li>
+                <li><a href="/admin/fill-in-blanks" class="sidebar-link">✏️ Fill in Blanks</a></li>
+                <li><a href="/admin/grading" class="sidebar-link">💯 Grading & Marks</a></li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link btn-danger" style="color: white; justify-content: center; gap: 8px;" id="logoutBtn">
+                    🚪 Log Out
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Window -->
+        <main class="main-content animate-fade">
+            <header class="content-header">
+                <div class="content-title">
+                    <h1>Administrator Terminal</h1>
+                    <p>Welcome back, <span class="user-name-display" style="color: #f59e0b; font-weight: 600;">Admin</span></p>
+                </div>
+            </header>
+
+            <!-- Stats grid -->
+            <section class="stats-grid">
+                <div class="glass-panel stat-card">
+                    <div class="card-label">Active Subjects</div>
+                    <div class="card-value" id="statSubjects">0</div>
+                    <div class="card-trend up">Curriculum Courses</div>
+                </div>
+                <div class="glass-panel stat-card">
+                    <div class="card-label">Teachers</div>
+                    <div class="card-value" id="statTeachers">0</div>
+                    <div class="card-trend up">Educators</div>
+                </div>
+                <div class="glass-panel stat-card">
+                    <div class="card-label">Students</div>
+                    <div class="card-value" id="statStudents">0</div>
+                    <div class="card-trend up">Learners</div>
+                </div>
+                <div class="glass-panel stat-card" style="border-color: rgba(99, 102, 241, 0.25);">
+                    <div class="card-label">Quizzes</div>
+                    <div class="card-value" id="statQuizzes">0</div>
+                    <div class="card-trend up">Evaluations</div>
+                </div>
+                <div class="glass-panel stat-card" style="border-color: rgba(236, 72, 153, 0.25);">
+                    <div class="card-label">Fill in Blanks</div>
+                    <div class="card-value" id="statFillBlanks">0</div>
+                    <div class="card-trend up">Exercises</div>
+                </div>
+                <div class="glass-panel stat-card" style="border-color: rgba(16, 185, 129, 0.25);">
+                    <div class="card-label">Content Files</div>
+                    <div class="card-value" id="statContent">0</div>
+                    <div class="card-trend up">Materials</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="toast-container"></div>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

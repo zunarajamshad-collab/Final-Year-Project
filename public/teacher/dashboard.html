@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard | Learnify</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <script src="/assets/js/auth.js"></script>
+    <script>checkAuth('teacher');</script>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" style="border-color: rgba(236,72,153,0.15);">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo-icon" style="background: var(--color-secondary-gradient); box-shadow: var(--shadow-neon-pink);">L</div>
+                    <div>
+                        <span class="app-title" style="font-size: 1.25rem;">LEARNIFY</span>
+                        <div style="font-size: 0.65rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; margin-top: -2px;">Smart Learning System</div>
+                    </div>
+                </div>
+                <span class="user-badge" style="border-color: rgba(236,72,153,0.3); color: #ec4899; margin-top: 12px;">Educator</span>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li><a href="/teacher/dashboard" class="sidebar-link active" style="box-shadow: var(--shadow-neon-pink); background: var(--color-secondary-gradient);">📊 Dashboard</a></li>
+                <li><a href="/teacher/subjects" class="sidebar-link">📚 Assigned Subjects</a></li>
+                <li><a href="/teacher/content" class="sidebar-link">📄 Content Library</a></li>
+                <li><a href="/teacher/quizzes" class="sidebar-link">📝 Quizzes</a></li>
+                <li><a href="/teacher/fill-in-blanks" class="sidebar-link">✏️ Fill in Blanks</a></li>
+                <li><a href="/teacher/grading" class="sidebar-link">💯 Grading & Results</a></li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link btn-danger" style="color: white; justify-content: center; gap: 8px;" id="logoutBtn">
+                    🚪 Log Out
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Window -->
+        <main class="main-content animate-fade">
+            <header class="content-header">
+                <div class="content-title">
+                    <h1>Educator Workspace</h1>
+                    <p>Welcome back, <span class="user-name-display" style="color: #ec4899; font-weight: 600;">Teacher</span></p>
+                </div>
+            </header>
+
+            <!-- Stats grid -->
+            <section class="stats-grid">
+                <div class="glass-panel stat-card" style="border-color: rgba(236,72,153,0.25);">
+                    <div class="card-label">Assigned Subjects</div>
+                    <div class="card-value" id="teacherSubCount">0</div>
+                    <div class="card-trend up">Teaching Courses</div>
+                </div>
+                <div class="glass-panel stat-card" style="border-color: rgba(245, 158, 11, 0.25);">
+                    <div class="card-label">Pending Student Reviews</div>
+                    <div class="card-value" id="teacherPendingGrading">0</div>
+                    <div class="card-trend down">Requires Marks Entry</div>
+                </div>
+            </section>
+
+            <section class="glass-panel" style="padding: 2.5rem; border-color: rgba(236,72,153,0.15);">
+                <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; background: var(--color-secondary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Course Educator Controls</h2>
+                <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem;">
+                    As an educator, you can view your assigned subjects, upload reading materials, build multiple-choice Quizzes & Fill in the Blanks exercises, grade student attempts, and generate marks reports.
+                </p>
+                <div style="display: flex; gap: 15px;">
+                    <a href="/teacher/grading" class="btn-glow btn-secondary">Go to Grading & Results &rarr;</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="toast-container"></div>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
